@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace WebApp.Models
 {
     public class MultiTenantContext : DbContext
     {
+        public MultiTenantContext() : base("DefaultConnection")
+        {
+            
+        }
+
         public DbSet<Tenant> Tenants { get; set; }
+        public DbSet<Speaker> Speakers { get; set; }
+        public DbSet<Session> Sessions { get; set; }
     }
 }

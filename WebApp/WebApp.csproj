@@ -146,9 +146,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611151523321_InitialModel.cs" />
-    <Compile Include="Migrations\201611151523321_InitialModel.Designer.cs">
-      <DependentUpon>201611151523321_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201611151956455_InitialModelTenantsSpeakersSessions.cs" />
+    <Compile Include="Migrations\201611151956455_InitialModelTenantsSpeakersSessions.Designer.cs">
+      <DependentUpon>201611151956455_InitialModelTenantsSpeakersSessions.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MultiTenantContext.cs" />
@@ -219,8 +219,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611151523321_InitialModel.resx">
-      <DependentUpon>201611151523321_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611151956455_InitialModelTenantsSpeakersSessions.resx">
+      <DependentUpon>201611151956455_InitialModelTenantsSpeakersSessions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
