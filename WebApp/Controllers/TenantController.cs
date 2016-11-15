@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using WebApp.Models;
 
@@ -8,32 +9,11 @@ namespace WebApp.Controllers
     {
         public ActionResult Index()
         {
-            var tenants = new List<Tenant>
+            using (var context = new MultiTenantContext())
             {
-                new Tenant()
-                {
-                    Name = "SVCC",
-                    DomainName = "www.siliconvalley-codecamp.com",
-                    Id = 1,
-                    Default = true
-                },
-                new Tenant()
-                {
-                    Name = "ANGU",
-                    DomainName = "angular.com",
-                    Id = 3,
-                    Default = false
-                },
-                new Tenant()
-                {
-                    Name = "CSSC",
-                    DomainName = "codestarssummit.com",
-                    Id = 2,
-                    Default = false
-                }
-            };
-
-            return View(tenants);
+                var tenants = context.Tenants.ToList();
+                return View(tenants);
+            }
         }
     }
 }
