@@ -169,6 +169,7 @@
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\Speaker.cs" />
     <Compile Include="Models\Tenant.cs" />
+    <Compile Include="MultTenantViewEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TCache.cs" />
@@ -229,10 +230,11 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <EmbeddedResource Include="session.json" />
     <EmbeddedResource Include="speaker.json" />
-    <Content Include="Views\Speaker\Index.cshtml" />
+    <Content Include="Views\SVCC\Speaker\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Speaker\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
