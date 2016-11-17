@@ -2,11 +2,11 @@
 
 namespace WebApp.Controllers
 {
-    public class SpeakerController : Controller
+    public class SpeakerController : MultiTenantMvcController
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Index", Tenant);
         }
     }
 }
