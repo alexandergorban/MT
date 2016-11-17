@@ -41,23 +41,34 @@ namespace WebApp
             string cacheName = "all-tenants-cache-name";
             int cacheTimeOutSeconds = 30;
 
-            List<Tenant> tenants = (List<Tenant>)HttpContext.Current.Cache.Get(cacheName);
-            if (tenants == null)
-            {
-                lock (Locker)
+            List<Tenant> tenants = TCache<List<Tenant>>.Get(cacheName, cacheTimeOutSeconds,
+                () =>
                 {
-                    if (tenants == null)
+                    List<Tenant> tenants1;
+                    using (var context = new MultiTenantContext())
                     {
-                        using (var context = new MultiTenantContext())
-                        {
-                            tenants = context.Tenants.ToList();
-                            HttpContext.Current.Cache.Insert(cacheName, tenants, null,
-                                DateTime.Now.Add(new TimeSpan(0, 0, cacheTimeOutSeconds)),
-                                TimeSpan.Zero);
-                        }
+                        tenants1 = context.Tenants.ToList();
                     }
-                }
-            }
+                    return tenants1;
+                });
+
+            //List<Tenant> tenants = (List<Tenant>)HttpContext.Current.Cache.Get(cacheName);
+            //if (tenants == null)
+            //{
+            //    lock (Locker)
+            //    {
+            //        if (tenants == null)
+            //        {
+            //            using (var context = new MultiTenantContext())
+            //            {
+            //                tenants = context.Tenants.ToList();
+            //                HttpContext.Current.Cache.Insert(cacheName, tenants, null,
+            //                    DateTime.Now.Add(new TimeSpan(0, 0, cacheTimeOutSeconds)),
+            //                    TimeSpan.Zero);
+            //            }
+            //        }
+            //    }
+            //}
 
             tenant = tenants.FirstOrDefault(a => a.DomainName.ToLower().Equals(uriHost)) ??
                      tenants.FirstOrDefault(a => a.Default);
