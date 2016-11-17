@@ -61,10 +61,6 @@ namespace WebApp.Models
 
             CreateSpeakers(context);
             CreateSessions(context);
-
-            //var list = Assembly.GetExecutingAssembly().GetManifestResourceNames();
-
-            //var sessionJsonAll = GetEmbeddedResourceAsString("WebApp.session.json");
         }
 
         private void CreateSpeakers(MultiTenantContext context)
