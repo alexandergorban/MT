@@ -15,8 +15,6 @@ namespace WebApp.Controllers
         [MultiTenantControllerAllow("svcc,angu")]
         public async Task<ActionResult> Index()
         {
-            //var speakersAll = await context.Speakers.ToListAsync();
-
             Task<List<Speaker>> speakersAll = new TCache<Task<List<Speaker>>>().
                 Get("s-cache", 20,
                     () =>
@@ -54,7 +52,7 @@ namespace WebApp.Controllers
                  where sessionInTenant
                  select speaker).ToList();
 
-            return View("Index", speakers);
+            return View("Index", "_Layout", speakers);
         }
     }
 }
