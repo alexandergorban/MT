@@ -231,6 +231,7 @@
     <EmbeddedResource Include="session.json" />
     <EmbeddedResource Include="speaker.json" />
     <Content Include="Views\SVCC\Speaker\Index.cshtml" />
+    <Content Include="Views\ANGU\Speaker\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
