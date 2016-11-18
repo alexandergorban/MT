@@ -160,10 +160,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ITCache.cs" />
-    <Compile Include="Migrations\201611151956455_InitialModelTenantsSpeakersSessions.cs" />
-    <Compile Include="Migrations\201611151956455_InitialModelTenantsSpeakersSessions.Designer.cs">
-      <DependentUpon>201611151956455_InitialModelTenantsSpeakersSessions.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MultiTenantContext.cs" />
     <Compile Include="Models\Session.cs" />
@@ -240,11 +236,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611151956455_InitialModelTenantsSpeakersSessions.resx">
-      <DependentUpon>201611151956455_InitialModelTenantsSpeakersSessions.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

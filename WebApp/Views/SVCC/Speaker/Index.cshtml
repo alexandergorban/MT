@@ -20,6 +20,17 @@
                 @speaker.FirstName @speaker.LastName
             </span>
             <br/>
+            <span>
+                Speaker:
+                @speaker.FirstName
+                &nbsp;
+                @speaker.LastName<br/>
+            </span>
+            foreach (var session in speaker.Sessions)
+            {
+                <span>&nbsp;&nbsp;@session.Title&nbsp;</span>
+                <br/>
+            }
         }
     </div>
 </body>
