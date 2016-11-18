@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace WebApp.Controllers
     {
         private MultiTenantContext context = new MultiTenantContext();
 
+        [MultiTenantControllerAllow("svcc,angu")]
         public async Task<ActionResult> Index()
         {
             //var speakersAll = await context.Speakers.ToListAsync();
