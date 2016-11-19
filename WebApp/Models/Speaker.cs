@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace WebApp.Models
 {
@@ -12,6 +15,10 @@ namespace WebApp.Models
         public string Bio { get; set; }
         public bool AllowHtml { get; set; }
         public int PictureId { get; set; }
+
+        public string SpeakerUrl => new
+           Utils().GenerateSlug($"{FirstName}-{LastName}-{PictureId}");
+
         public virtual List<Session> Sessions { get; set; }
     }
 }
