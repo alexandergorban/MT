@@ -1249,6 +1249,8 @@
     <Content Include="Views\SVCC\Shared\_TopMenu.cshtml" />
     <Content Include="Views\SVCC\Speaker\Detail.cshtml" />
     <Content Include="Views\SVCC\Home\Index.cshtml" />
+    <Content Include="Views\SVCC\Session\Detail.cshtml" />
+    <Content Include="Views\SVCC\Session\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
