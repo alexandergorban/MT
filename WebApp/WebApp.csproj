@@ -1247,6 +1247,8 @@
     <Content Include="Views\ANGU\Shared\_Layout.cshtml" />
     <Content Include="Views\SVCC\Shared\_Layout.cshtml" />
     <Content Include="Views\SVCC\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\SVCC\Speaker\Detail.cshtml" />
+    <Content Include="Views\SVCC\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
