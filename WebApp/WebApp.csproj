@@ -1251,6 +1251,11 @@
     <Content Include="Views\SVCC\Home\Index.cshtml" />
     <Content Include="Views\SVCC\Session\Detail.cshtml" />
     <Content Include="Views\SVCC\Session\Index.cshtml" />
+    <Content Include="Views\CSSC\Home\CodeOfConduct.cshtml" />
+    <Content Include="Views\CSSC\Home\Index.cshtml" />
+    <Content Include="Views\CSSC\Session\Detail.cshtml" />
+    <Content Include="Views\CSSC\Shared\_Layout.cshtml" />
+    <Content Include="Views\CSSC\Shared\_TopMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
