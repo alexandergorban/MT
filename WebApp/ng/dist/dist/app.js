@@ -9,11 +9,11 @@ exports.gatesAgeOnDate = function (date1) {
     return (new Date(date1) - new Date(billGatesBirthday)) / 1000 / 60 / 60 / 24 / 36 / 10;
 };
 },{}],2:[function(require,module,exports){
-var calcAge = require('./calcAge.js');
+var calcAge = require('./CalcAge.js');
 
-document.getElementsByTagName('body')[0].onload = function () {
+document.getelementsByTagName('body')[0].onload = function () {
     document.body.innerHTML = 'The answer is: ' + calcAge.gatesAge();
 };
 
 
-},{"./calcAge.js":1}]},{},[2]);
+},{"./CalcAge.js":1}]},{},[2]);

@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.18.6",
-    "gulp-util": "^3.0.8"
+    "browserify": "^13.3.0",
+    "gulp-util": "^3.0.8",
+    "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1"
