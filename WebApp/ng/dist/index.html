@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="">
 <head>
     <meta charset="UTF-8">
     <title>Run From Browser-Sync</title>
+    <script src="app.js"></script>
 </head>
 <body>
-    <b>Brouser Sync Now</b>
+<div ng-init="data = {name: 'Silicon Valley Code Camp', year: 2004}">
+</div>
+
+<input ng-model="data.name" /><br/>
+<input ng-model="data.year "/><br/>
+<span ng-hide="false">{{ data.name }} {{ data.year }}</span>
+
 </body>
-<script src="app.js"></script>
 </html>
