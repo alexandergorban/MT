@@ -1,35 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="MTApp">
 <head>
     <meta charset="UTF-8">
     <title>Run From Browser-Sync</title>
     <script src="app.js"></script>
 </head>
 <body>
-<div ng-init="sessions = [
-    {title: 'JavaScript', speaker: 'Crockford'},
-    {title: 'C', speaker: 'Ritchie'},
-    {title: 'Java', speaker: 'Gosling'},
-    {title: 'C#', speaker: 'Hejlsberg'}
-]">
+
+<div ng-controller="SVCCController">
+    <input type="text" ng-model="search.$" placeholder="Search Text..."/><br/>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Speaker</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="session in sessions | filter:search">
+            <td>{{ session.title | uppercase }}</td>
+            <td>{{ session.speaker }}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-
-<input type="text" ng-model="search.$" placeholder="Search Text..."/><br/>
-
-<table border="1">
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Speaker</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="session in sessions | filter:search">
-        <td>{{ session.title | uppercase }}</td>
-        <td>{{ session.speaker }}</td>
-    </tr>
-    </tbody>
-</table>
 
 </body>
 </html>
