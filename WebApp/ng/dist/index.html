@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="MTApp">
 <head>
+    <base href="/"> <!--required for html5mode-->
     <meta charset="UTF-8">
     <title>Run From Browser-Sync</title>
     <script src="app.js"></script>
 </head>
 <body>
 
-<div ng-controller="HomeController">
-    <input type="text" ng-model="search.$" placeholder="Search Text..."/><br/>
+<ul>
+    <li>
+        <a href="/home">HOME</a>
+    </li>
+    <li>
+        <a href="/speaker">SPEAKER</a>
+    </li>
+</ul>
 
-    <table border="1">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Speaker</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="session in sessions | filter:search">
-            <td>{{ session.title | uppercase }}</td>
-            <td>{{ session.speaker }}</td>
-        </tr>
-        </tbody>
-    </table>
+<div class="container">
+    <div ui-view></div>
 </div>
+
+<!--<div ng-controller="HomeController">-->
+    <!--<input type="text" ng-model="search.$" placeholder="Search Text..."/><br/>-->
+
+    <!--<table border="1">-->
+        <!--<thead>-->
+        <!--<tr>-->
+            <!--<th>Title</th>-->
+            <!--<th>Speaker</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr ng-repeat="session in sessions | filter:search">-->
+            <!--<td>{{ session.title | uppercase }}</td>-->
+            <!--<td>{{ session.speaker }}</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
+<!--</div>-->
 
 </body>
 </html>
