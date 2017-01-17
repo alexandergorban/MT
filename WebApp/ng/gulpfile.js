@@ -4,6 +4,34 @@ var browserSync = require('browser-sync').create();
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
+var gulpangulartemplatecache = require('gulp-angular-templatecache');
+var format = require('util').format;
+
+var config = {
+    tenantName: 'svcc',
+    destinationDir: './dist/',
+    templateCache: {
+        file: 'templates.js',
+        options: {
+            module: 'MTApp',
+            standAlone: false,
+            root: '/templates/'
+        }
+    }
+};
+
+// Gulp task for creating template cache
+gulp.task('templatecache', function () {
+    var templateDir = format('./%s/src/**/*.html', config.tenantName);
+    gutil.log('Creating an AngularJS $templateCache ' + templateDir + ' -> ' + config.destinationDir);
+    return gulp
+        .src(templateDir)
+        .pipe(gulpangulartemplatecache(
+            config.templateCache.file,
+            config.templateCache.options
+        ))
+        .pipe(gulp.dest(config.destinationDir));
+});
 
 gulp.task('scripts', function () {
     return bundle(browserify('./svcc/main.js'));

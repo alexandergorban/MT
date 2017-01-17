@@ -1,7 +1,7 @@
 var exports = module.exports = function ($stateProvider) {
     $stateProvider.state('home', {
         url: '/home',
-        template: '<b>This is HTML for Home State Template</b>',
+        templateUrl: '/templates/home/home.html',
         controller: 'HomeController'
     });
 };
