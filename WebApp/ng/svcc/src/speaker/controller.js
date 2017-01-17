@@ -1,7 +1,7 @@
-function SpeakerController ($scope) {
+function SpeakerController ($scope, speakers) {
 
 }
 
-SpeakerController.$inject = ['$scope'];
+SpeakerController.$inject = ['$scope', 'speakers'];
 
 module.exports = SpeakerController;
