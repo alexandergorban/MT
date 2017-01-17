@@ -1,6 +1,7 @@
 module.exports = require('angular').module('MTApp', [
     require('angular-ui-router'),
-    require('./home') // 'home'
+    require('./home'), // 'home'
+    require('./speaker') // 'speaker'
 ])
     .config(enableHtml5Mode)
     .name;
