@@ -1,7 +1,7 @@
 var exports = module.exports = function ($stateProvider) {
     $stateProvider.state('speaker', {
         url: '/speaker',
-        template: '<b>This is HTML for Speaker State Template</b>',
+        templateUrl: '/templates/speaker/speaker.html',
         controller: 'SpeakerController',
         resolve: {
             speakers: getSpeakers

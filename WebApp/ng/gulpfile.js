@@ -5,9 +5,12 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var gulpangulartemplatecache = require('gulp-angular-templatecache');
+
 var format = require('util').format;
+var merge = require('utils-merge');
 
 var config = {
+    mock: true,
     tenantName: 'svcc',
     destinationDir: './dist/',
     templateCache: {
@@ -38,7 +41,15 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('watch', function () {
-    var watcher = watchify(browserify('./svcc/main.js', watchify.args));
+    var baseDir = format('./%s', config.tenantName);
+    var combinedArgs = merge(watchify.args, {debug: true});
+    var b = browserify(baseDir, combinedArgs);
+    if (config.mock == true){
+        gutil.log('adding ' + format('%s/mock', config.tenantName));
+        b.add(format('$s/mock', config.tenantName));
+    }
+    var watcher = watchify(b);
+
     bundle(watcher);
     watcher.on('update', function () {
         bundle(watcher);
